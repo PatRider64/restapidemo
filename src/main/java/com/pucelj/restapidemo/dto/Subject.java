@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 @Entity
@@ -21,4 +23,8 @@ public class Subject {
     private String title;
     private String instructions;
     private LocalDate date;
+
+    @ManyToOne
+    @JoinColumn(name="id")
+    private Student students;
 }
