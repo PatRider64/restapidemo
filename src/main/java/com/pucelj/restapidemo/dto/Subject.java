@@ -2,12 +2,7 @@ package com.pucelj.restapidemo.dto;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -25,6 +20,6 @@ public class Subject {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name="id")
-    private Student students;
+    @JoinColumn(name="student_id")
+    private Student student;
 }
